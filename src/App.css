@@ -1,89 +1,93 @@
 body {
-    background: linear-gradient(to bottom, #222, #444);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: "Arial", sans-serif;
-  }
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: "Arial", sans-serif;
+}
 
-  .traffic-light {
-    background: black;
-    padding: 20px;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    border: 3px solid #666;
-  }
-  
-  .light {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    transition: all 0.3s ease-in-out;
-    border: 3px solid #333;
-  }
-  
-  .red {
-    background-color: #ff3333;
-  }
-  .yellow {
-    background-color: #ffcc00;
-  }
-  .green {
-    background-color: #33cc33;
-  }
-  .purple {
-    background-color: #800080;
-  }
-  
-  .glow {
-    box-shadow: 0 0 25px 10px rgba(255, 255, 255, 0.6);
-    opacity: 1;
-    transform: scale(1.1);
-  }
-  
-  .light:not(.glow) {
-    opacity: 0.3;
-  }
+.traffic-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  button {
-    background: linear-gradient(to right, #ff5722, #ff9800);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 10px;
-  }
+.pole {
+  width: 20px;
+  height: 100px;
+  background: black;
+}
 
-  button:hover {
-    background: linear-gradient(to right, #ff9800, #ff5722);
-    transform: scale(1.1);
-  }
-  
-  @media (max-width: 600px) {
-    .traffic-light {
-      width: 120px;
-      padding: 15px;
-    }
-    
-    .light {
-      width: 60px;
-      height: 60px;
-    }
-  
-    button {
-      font-size: 14px;
-      padding: 8px 12px;
-    }
-  }
-  
+.traffic-light {
+  background: black;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.traffic-top {
+  width: 100px;
+  height: 20px;
+  background: #444;
+  border-radius: 10px 10px 0 0;
+  position: absolute;
+  top: -20px;
+}
+
+.light {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  border: 3px solid #333;
+}
+
+.red {
+  background-color: #781818;
+}
+
+.yellow {
+  background-color: #b36b1e;
+}
+
+.green {
+  background-color: #2e7031;
+}
+
+.purple {
+  background-color: #800080; /* Color púrpura */
+}
+
+.glow {
+  box-shadow: 0 0 20px 8px rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.light:not(.glow) {
+  opacity: 0.8;
+}
+
+/* Efecto de brillo más amarillento */
+.red.glow {
+  box-shadow: 0 0 20px 8px rgba(255, 69, 0, 0.6); /* Brillo más amarillento para el rojo */
+}
+
+.yellow.glow {
+  box-shadow: 0 0 20px 8px rgba(255, 255, 0, 0.6); /* Brillo más amarillento para el amarillo */
+}
+
+.green.glow {
+  box-shadow: 0 0 20px 8px rgba(50, 205, 50, 0.6); /* Brillo más amarillento para el verde */
+}
+
+.purple.glow {
+  box-shadow: 0 0 20px 8px rgba(255, 0, 255, 0.6); /* Brillo más amarillento para el púrpura */
+}
